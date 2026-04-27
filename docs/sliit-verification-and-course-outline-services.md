@@ -1,7 +1,7 @@
 ---
 title: SLIIT Verification and Course Outline Services
 category: verification
-source: support.tessellability.lk
+source: support.sliit.lk
 content_description: Consolidated verification and official-document guidance covering SLIIT academic qualification verification process, local and foreign verification fees, required submission documents, processing timelines, franchised-program verification routes, and related course outline issuance details.
 audience:
   - graduates

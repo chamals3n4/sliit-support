@@ -1,7 +1,7 @@
 ---
 title: SLIIT Payment Methods and Bank Transfer Details
 category: payments
-source: support.tessellability.lk
+source: support.sliit.lk
 content_description: Reference guide for SLIIT student payment options including card gateways, bank account details, cash deposit locations, online transfer channels, NTB CDM instructions, and direct remittance information with transaction ID requirements.
 audience:
   - prospective_students

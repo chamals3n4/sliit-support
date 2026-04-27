@@ -1,7 +1,7 @@
 ---
 title: Industrial Placement Guide
 category: placements
-source: support.tessellability.lk
+source: support.sliit.lk
 content_description: Comprehensive SLIIT Faculty of Computing industrial training (IT3110) guide covering eligibility, mandatory duration and credits, placement approval workflow (forms I-1A/I-1B/I-3A/I-3B/I-5A/I-6), student and advisor responsibilities, leave and attendance rules, assessment criteria, repeat requirements, and accepted internship domains by specialization.
 audience:
   - undergraduate_students

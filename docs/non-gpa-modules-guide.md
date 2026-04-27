@@ -1,7 +1,7 @@
 ---
 title: Non-GPA Modules
 category: registration
-source: support.tessellability.lk
+source: support.sliit.lk
 content_description: Knowledge base entry explaining non-GPA modules at SLIIT, their graduation impact, repeat registration requirements, and faculty-wise lists of non-GPA modules for Computing, Engineering, and Humanities and Sciences.
 audience:
   - current_students

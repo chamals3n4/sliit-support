@@ -1,7 +1,7 @@
 ---
 title: SLIIT General Student Support Guide
 category: general
-source: support.tessellability.lk
+source: support.sliit.lk
 content_description: Broad SLIIT student support knowledge base compilation covering institutional information, policies, registration and exam procedures, academic conduct, payments, verifications, scholarships, IT services, student life, sports, convocation, and multiple operational guides including online exam and Lockdown Browser instructions.
 audience:
   - prospective_students
@@ -65,9 +65,9 @@ Things to remember:
 - The panel investigates the case and gives a recommendation.
 - The final decision is made by the Senate, based on the panel's recommendation.
 - Students are strongly encouraged to always follow academic integrity.
-For more information on the Academic Misconduct Investigation Process, please refer the Student Rule book on
-Courseweb.
-Last updated by TB/AA
+  For more information on the Academic Misconduct Investigation Process, please refer the Student Rule book on
+  Courseweb.
+  Last updated by TB/AA
 
 ## Access online examination
 
@@ -140,9 +140,8 @@ Why It Matters:
 3. Avoiding Last-Minute Surprises
    Students are strongly encouraged to check the student portal and Hall allocation well in advance of the exam
 
-date. This allows time to resolve any discrepancies or missing information before it’s too late.
-4. Proof of Eligibility
-   For students, the attendance sheet is more than just a list - it is a guarantee of your right to be examined. It
+date. This allows time to resolve any discrepancies or missing information before it’s too late. 4. Proof of Eligibility
+For students, the attendance sheet is more than just a list - it is a guarantee of your right to be examined. It
 also serves as a control document for lectures, invigilators and examination unit.
 
 What should students do?
@@ -365,19 +364,19 @@ Results and Grading at SLIIT
 SLIIT uses 12 grades in assessing student performance.
 
 | Grade | Grade Point | Marks Range |
-| --- | --- | --- |
-| A+ | 4.0 | 90-100 |
-| A | 4.0 | 80-89 |
-| A- | 3.7 | 75-79 |
-| B+ | 3.3 | 70-74 |
-| B | 3.0 | 65-69 |
-| B- | 2.7 | 60-64 |
-| C+ | 2.3 | 55-59 |
-| C | 2.0 | 45-54 |
-| C- | 1.7 | 40-44 |
-| D+ | 1.3 | 35-39 |
-| D | 1.0 | 30-34 |
-| E | 0.0 | 0-29 |
+| ----- | ----------- | ----------- |
+| A+    | 4.0         | 90-100      |
+| A     | 4.0         | 80-89       |
+| A-    | 3.7         | 75-79       |
+| B+    | 3.3         | 70-74       |
+| B     | 3.0         | 65-69       |
+| B-    | 2.7         | 60-64       |
+| C+    | 2.3         | 55-59       |
+| C     | 2.0         | 45-54       |
+| C-    | 1.7         | 40-44       |
+| D+    | 1.3         | 35-39       |
+| D     | 1.0         | 30-34       |
+| E     | 0.0         | 0-29        |
 
 The Pass grade at SLIIT is “C”.
 
@@ -771,7 +770,7 @@ Attachments:
 
 Prorata registration is the registration granted to a student who has not completed the requirements to proceed
 to the next year of study. He/she will have to repeat the respective failed modules and satisfy the required
-progression criteria to proceed to the next academic year.  
+progression criteria to proceed to the next academic year.
 
 ### When will Prorata Registration open?
 
@@ -1246,7 +1245,7 @@ Key online resources for SLIIT students:
 - SLIIT Email (example: ITXXXXXXXX@my.sliit.lk)
   - Issued after successful enrollment.
   - Password can be reset through the "Forgot Password" Office 365 flow.
-AP/Academic Affairs
+    AP/Academic Affairs
 
 June 2025
 
