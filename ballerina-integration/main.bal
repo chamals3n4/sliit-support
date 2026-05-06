@@ -11,7 +11,7 @@ isolated function handleChat(agent:ChatReqMessage request) returns agent:ChatRes
 
 @http:ServiceConfig {
     cors: {
-        allowOrigins: ["http://localhost:5173", "https://sliit-support.vercel.app", "sliit-support-e74opo6h9-chamalsena.vercel.app"],
+        allowOrigins: ["http://localhost:5173", "https://sliit-support.vercel.app", "https://sliit-support-e74opo6h9-chamalsena.vercel.app"],
         allowMethods: ["POST", "GET", "OPTIONS"]
     }
 }
