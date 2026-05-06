@@ -18,6 +18,7 @@ export function ChatPage() {
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
   const canSend = input.trim().length > 0
+  const canClear = messages.length > 0 && !sending && !waitingForResponse
 
   const resizeInput = () => {
     const el = inputRef.current
@@ -97,6 +98,14 @@ export function ChatPage() {
     }
   }
 
+  const clearChat = () => {
+    setMessages([])
+    setInput('')
+    setShowSuggestions(false)
+    setFocusMessageId(null)
+    inputRef.current?.focus()
+  }
+
   return (
     <main className="page-wrap">
       <section className="chat-layout">
@@ -128,8 +137,10 @@ export function ChatPage() {
           value={input}
           onChange={setInput}
           onSubmit={submit}
+          onClear={clearChat}
           inputRef={inputRef}
           canSend={canSend}
+          canClear={canClear}
           sending={sending}
         />
       </section>

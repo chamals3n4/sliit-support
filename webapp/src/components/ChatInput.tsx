@@ -1,11 +1,13 @@
-import type { FormEvent, RefObject } from 'react'
+import type { FormEvent, KeyboardEvent, RefObject } from 'react'
 
 type ChatInputProps = {
   value: string
   onChange: (value: string) => void
   onSubmit: (event: FormEvent) => void
+  onClear: () => void
   inputRef: RefObject<HTMLTextAreaElement | null>
   canSend: boolean
+  canClear: boolean
   sending: boolean
 }
 
@@ -13,12 +15,26 @@ export function ChatInput({
   value,
   onChange,
   onSubmit,
+  onClear,
   inputRef,
   canSend,
+  canClear,
   sending,
 }: ChatInputProps) {
+  const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && !event.shiftKey && canSend && !sending) {
+      event.preventDefault()
+      event.currentTarget.form?.requestSubmit()
+    }
+  }
+
   return (
     <form className="chat-form" onSubmit={onSubmit}>
+      <div className="chat-form-actions">
+        <button type="button" className="clear-btn" onClick={onClear} disabled={!canClear}>
+          Clear chat
+        </button>
+      </div>
       <div className="input-wrap">
         <textarea
           ref={inputRef}
@@ -30,6 +46,7 @@ export function ChatInput({
           className="chat-input"
           value={value}
           onChange={(e) => onChange(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
         <button
           id="send-btn"
