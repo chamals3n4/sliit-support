@@ -15,7 +15,7 @@ function getSessionId(): string {
 }
 
 export async function sendChatMessage(message: string): Promise<string> {
-  const response = await fetch(`${BASE_URL}/api/chat`, {
+  const response = await fetch(`${BASE_URL}/chat`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
