@@ -19,6 +19,12 @@ isolated function handleChat(agent:ChatReqMessage request) returns agent:ChatRes
     }
 }
 service /api on sliitSupportAgentLister {
+    isolated resource function options chat() returns http:Response {
+        http:Response response = new;
+        response.statusCode = 204;
+        return response;
+    }
+
     isolated resource function post chat(@http:Payload agent:ChatReqMessage request) returns agent:ChatRespMessage|error {
         log:printInfo("POST /api/chat: " + request.message);
         agent:ChatRespMessage|error result = handleChat(request);
