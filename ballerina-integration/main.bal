@@ -1,15 +1,29 @@
 import ballerina/http;
+import ballerina/log;
 import ballerinax/ai.agent;
 
 listener agent:Listener sliitSupportAgentLister = new (listenOn = check http:getDefaultListener());
 
-function handleChat(agent:ChatReqMessage request) returns agent:ChatRespMessage|error {
+isolated function handleChat(agent:ChatReqMessage request) returns agent:ChatRespMessage|error {
     string agentResponse = check llmChat(request.message);
     return {message: agentResponse};
 }
 
+@http:ServiceConfig {
+    cors: {
+        allowOrigins: ["http://localhost:5173"],
+        allowMethods: ["POST", "GET", "OPTIONS"]
+    }
+}
 service /api on sliitSupportAgentLister {
-    resource function post chat(@http:Payload agent:ChatReqMessage request) returns agent:ChatRespMessage|error {
-        return handleChat(request);
+    isolated resource function post chat(@http:Payload agent:ChatReqMessage request) returns agent:ChatRespMessage|error {
+        log:printInfo("POST /api/chat: " + request.message);
+        agent:ChatRespMessage|error result = handleChat(request);
+
+        if result is error {
+            log:printError("Chat handler failed", 'error = result);
+            return result;
+        }
+        return result;
     }
 }

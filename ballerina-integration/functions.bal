@@ -1,3 +1,4 @@
+import ballerina/log;
 import ballerinax/openai.chat;
 import ballerinax/openai.embeddings;
 import ballerinax/pinecone.vector;
@@ -7,10 +8,11 @@ configurable string PINECONE_API_KEY = ?;
 configurable string PINECONE_URL = ?;
 configurable string bucketName = ?;
 
-embeddings:Client embeddingsClient = check new ({
+final embeddings:Client embeddingsClient = check new ({
     auth: {
         token: OPENAI_TOKEN
-    }
+    },
+    timeout: 60
 });
 
 final vector:Client pineconeVectorClient = check new ({
@@ -20,15 +22,9 @@ final vector:Client pineconeVectorClient = check new ({
 final chat:Client openAIChat = check new ({
     auth: {
         token: OPENAI_TOKEN
-    }
+    },
+    timeout: 60
 });
-
-final string embedding = "text-embed";
-
-vector:QueryRequest queryRequest = {
-    topK: 4,
-    includeMetadata: true
-};
 
 public type Metadata record {
     string text;
@@ -41,16 +37,32 @@ public type ChatResponseChoice record {|
     anydata...;
 |};
 
-function llmChat(string query) returns string|error {
+isolated function llmChat(string query) returns string|error {
+    if query.trim().length() == 0 {
+        return error("Query cannot be empty");
+    }
+    log:printInfo("Received query", query = query);
     float[] embeddingsFloat = check getEmbeddings(query);
-    queryRequest.vector = embeddingsFloat;
+    log:printInfo("Embeddings generated");
+
+    // queryRequest.vector = embeddingsFloat;
+    vector:QueryRequest queryRequest = {
+        topK: 4,
+        includeMetadata: true,
+        vector: embeddingsFloat
+    };
     vector:QueryMatch[] matches = check retrieveData(queryRequest);
+    log:printInfo("Pinecone matches retrieved", count = matches.length());
+
     string context = check augment(matches);
+    log:printInfo("Context augmented");
+
     string chatResponse = check generateText(query, context);
+    log:printInfo("Response generated successfully");
     return chatResponse;
 }
 
-function getEmbeddings(string query) returns float[]|error {
+isolated function getEmbeddings(string query) returns float[]|error {
     embeddings:CreateEmbeddingRequest req = {
         model: "text-embedding-ada-002",
         input: query
