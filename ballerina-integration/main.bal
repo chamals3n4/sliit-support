@@ -9,12 +9,12 @@ isolated function handleChat(agent:ChatReqMessage request) returns agent:ChatRes
     return {message: agentResponse};
 }
 
-// @http:ServiceConfig {
-//     cors: {
-//         allowOrigins: ["http://localhost:5173", "https://sliit-support.vercel.app", "https://sliit-support-e74opo6h9-chamalsena.vercel.app"],
-//         allowMethods: ["POST", "GET", "OPTIONS"]
-//     }
-// }
+@http:ServiceConfig {
+    cors: {
+        allowOrigins: ["http://localhost:5173", "https://sliit-support.vercel.app", "https://sliit-support-e74opo6h9-chamalsena.vercel.app"],
+        allowMethods: ["POST", "GET", "OPTIONS"]
+    }
+}
 service /api on sliitSupportAgentLister {
     isolated resource function post chat(@http:Payload agent:ChatReqMessage request) returns agent:ChatRespMessage|error {
         log:printInfo("POST /api/chat: " + request.message);
